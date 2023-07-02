@@ -11,12 +11,12 @@ public class StudentDaoImpl implements StudentDao {
         ArrayList<Record> records = new ArrayList<>();
         String str = "";
         if (opt.equals("1")) {
-            str = " WHERE jy_class_name=?;";
+            str = " WHERE jy_class_name10=?;";
         }
         try {
             Connection conn = getConnection();
             text = new String(text.getBytes("iso-8859-1"), "UTF-8");
-            String sql = "SELECT * FROM jiangy_courseview" + str;
+            String sql = "SELECT * FROM jiangy_courseview10" + str;
             PreparedStatement stat = conn.prepareStatement(sql);
             if (!opt.equals("2")) {
                 stat.setString(1, text);
@@ -24,16 +24,16 @@ public class StudentDaoImpl implements StudentDao {
             ResultSet rs = stat.executeQuery();
             while (rs.next()) {
                 Record record = new Record();
-                record.setCourseName(rs.getString("jy_name"));
-                record.setCourseCredit(rs.getString("jy_credit"));
-                record.setCoursePeriod(rs.getString("jy_period"));
-                record.setCourseExamination(rs.getString("jy_examination"));
-                record.setCourseNumber(rs.getString("jy_course_number"));
-                record.setCourseId(rs.getString("jy_id"));
-                record.setClassName(rs.getString("jy_class_name"));
-                record.setCourseTerm(rs.getString("jy_term"));
-                record.setTeacherName(rs.getString("jy_teacher"));
-                record.setCourseDetail(rs.getString("jy_detail"));
+                record.setCourseName(rs.getString("jy_name10"));
+                record.setCourseCredit(rs.getString("jy_credit10"));
+                record.setCoursePeriod(rs.getString("jy_period10"));
+                record.setCourseExamination(rs.getString("jy_examination10"));
+                record.setCourseNumber(rs.getString("jy_course_number10"));
+                record.setCourseId(rs.getString("jy_id10"));
+                record.setClassName(rs.getString("jy_class_name10"));
+                record.setCourseTerm(rs.getString("jy_term10"));
+                record.setTeacherName(rs.getString("jy_teacher10"));
+                record.setCourseDetail(rs.getString("jy_detail10"));
                 records.add(record);
             }
             Dao.closeAll(conn, stat, rs);
@@ -48,12 +48,12 @@ public class StudentDaoImpl implements StudentDao {
         ArrayList<Record> records = new ArrayList<>();
         String str = "";
         if (opt.equals("1")) {
-            str = " WHERE jy_teacher=?;";
+            str = " WHERE jy_teacher10=?;";
         }
         try {
             Connection conn = getConnection();
             text = new String(text.getBytes("iso-8859-1"), "UTF-8");
-            String sql = "SELECT * FROM jiangy_courseview" + str;
+            String sql = "SELECT * FROM jiangy_courseview10" + str;
             PreparedStatement stat = conn.prepareStatement(sql);
             if (!opt.equals("2")) {
                 stat.setString(1, text);
@@ -61,16 +61,16 @@ public class StudentDaoImpl implements StudentDao {
             ResultSet rs = stat.executeQuery();
             while (rs.next()) {
                 Record record = new Record();
-                record.setCourseName(rs.getString("jy_name"));
-                record.setCourseCredit(rs.getString("jy_credit"));
-                record.setCoursePeriod(rs.getString("jy_period"));
-                record.setCourseExamination(rs.getString("jy_examination"));
-                record.setCourseNumber(rs.getString("jy_course_number"));
-                record.setCourseId(rs.getString("jy_id"));
-                record.setClassName(rs.getString("jy_class_name"));
-                record.setCourseTerm(rs.getString("jy_term"));
-                record.setTeacherName(rs.getString("jy_teacher"));
-                record.setCourseDetail(rs.getString("jy_detail"));
+                record.setCourseName(rs.getString("jy_name10"));
+                record.setCourseCredit(rs.getString("jy_credit10"));
+                record.setCoursePeriod(rs.getString("jy_period10"));
+                record.setCourseExamination(rs.getString("jy_examination10"));
+                record.setCourseNumber(rs.getString("jy_course_number10"));
+                record.setCourseId(rs.getString("jy_id10"));
+                record.setClassName(rs.getString("jy_class_name10"));
+                record.setCourseTerm(rs.getString("jy_term10"));
+                record.setTeacherName(rs.getString("jy_teacher10"));
+                record.setCourseDetail(rs.getString("jy_detail10"));
                 records.add(record);
             }
             Dao.closeAll(conn, stat, rs);
@@ -95,21 +95,21 @@ public class StudentDaoImpl implements StudentDao {
                 else if (opt.equals("6")) str = "\'大三下\'";
                 else if (opt.equals("7")) str = "\'大四上\'";
                 else if (opt.equals("8")) str = "\'大四下\'";
-                str = " AND jy_term=" + str;
+                str = " AND jy_term10=" + str;
             }
-            String sql = "SELECT * FROM jiangy_scoreview WHERE jy_id=?" + str;
+            String sql = "SELECT * FROM jiangy_scoreview10 WHERE jy_id10=?" + str;
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, username);
             ResultSet rs = stat.executeQuery();
             while (rs.next()) {
                 Record record = new Record();
-                record.setStudentId(rs.getString("jy_id"));
-                record.setStudentName(rs.getString("jy_name"));
-                record.setCourseName(rs.getString("jy_course"));
-                record.setScoreValue(rs.getString("jy_value"));
-                record.setTeacherName(rs.getString("jy_teacher"));
-                record.setCourseTerm(rs.getString("jy_term"));
-                record.setClassName(rs.getString("jy_class_name"));
+                record.setStudentId(rs.getString("jy_id10"));
+                record.setStudentName(rs.getString("jy_name10"));
+                record.setCourseName(rs.getString("jy_course10"));
+                record.setScoreValue(rs.getString("jy_value10"));
+                record.setTeacherName(rs.getString("jy_teacher10"));
+                record.setCourseTerm(rs.getString("jy_term10"));
+                record.setClassName(rs.getString("jy_class_name10"));
                 records.add(record);
             }
             Dao.closeAll(conn, stat, rs);
@@ -134,21 +134,21 @@ public class StudentDaoImpl implements StudentDao {
                 else if (opt.equals("6")) str = "\'大三下\'";
                 else if (opt.equals("7")) str = "\'大四上\'";
                 else if (opt.equals("8")) str = "\'大四下\'";
-                str = " AND jy_term=" + str;
+                str = " AND jy_term10=" + str;
             }
-            String sql = "SELECT * FROM jiangy_creditview WHERE jy_id=?" + str;
+            String sql = "SELECT * FROM jiangy_creditview10 WHERE jy_id10=?" + str;
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, username);
             ResultSet rs = stat.executeQuery();
             while (rs.next()) {
                 Record record = new Record();
-                record.setStudentName(rs.getString("jy_name"));
-                record.setStudentCredits(rs.getString("jy_credits"));
-                record.setCourseName(rs.getString("jy_course"));
-                record.setCourseCredit(rs.getString("jy_credit"));
-                record.setCoursePeriod(rs.getString("jy_period"));
-                record.setCourseTerm(rs.getString("jy_term"));
-                record.setGpa(rs.getString("jy_gpa"));
+                record.setStudentName(rs.getString("jy_name10"));
+                record.setStudentCredits(rs.getString("jy_credits10"));
+                record.setCourseName(rs.getString("jy_course10"));
+                record.setCourseCredit(rs.getString("jy_credit10"));
+                record.setCoursePeriod(rs.getString("jy_period10"));
+                record.setCourseTerm(rs.getString("jy_term10"));
+                record.setGpa(rs.getString("jy_gpa10"));
                 records.add(record);
             }
             Dao.closeAll(conn, stat, rs);
@@ -173,21 +173,21 @@ public class StudentDaoImpl implements StudentDao {
                 else if (opt.equals("6")) str = "\'大三下\'";
                 else if (opt.equals("7")) str = "\'大四上\'";
                 else if (opt.equals("8")) str = "\'大四下\'";
-                str = " AND jy_term=" + str;
+                str = " AND jy_term10=" + str;
             }
-            String sql = "SELECT * FROM jiangy_scoreview WHERE jy_id=?" + str;
+            String sql = "SELECT * FROM jiangy_scoreview10 WHERE jy_id10=?" + str;
             PreparedStatement stat = conn.prepareStatement(sql);
             stat.setString(1, username);
             ResultSet rs = stat.executeQuery();
             while (rs.next()) {
                 Record record = new Record();
-                record.setStudentId(rs.getString("jy_id"));
-                record.setStudentName(rs.getString("jy_name"));
-                record.setCourseName(rs.getString("jy_course"));
-                record.setCourseDetail(rs.getString("jy_detail"));
-                record.setTeacherName(rs.getString("jy_teacher"));
-                record.setCourseTerm(rs.getString("jy_term"));
-                record.setClassName(rs.getString("jy_class_name"));
+                record.setStudentId(rs.getString("jy_id10"));
+                record.setStudentName(rs.getString("jy_name10"));
+                record.setCourseName(rs.getString("jy_course10"));
+                record.setCourseDetail(rs.getString("jy_detail10"));
+                record.setTeacherName(rs.getString("jy_teacher10"));
+                record.setCourseTerm(rs.getString("jy_term10"));
+                record.setClassName(rs.getString("jy_class_name10"));
                 records.add(record);
             }
             Dao.closeAll(conn, stat, rs);
