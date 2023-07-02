@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true">
+    <Resource
+            name="jdbc/JiangyMIS10"
+            type="javax.sql.DataSource"
+            maxTotal="4"
+            maxIdle="2"
+            driverClassName="org.postgresql.Driver"
+            url="jdbc:postgresql://192.168.182.136:26000/JiangyMIS10"
+            username="opengaussuser"
+            password="openGauss@123"
+            maxWaitMillis="5000"/>
+</Context>
