@@ -93,6 +93,8 @@
                     }
                     if (flag) {
                         out.print("已修学分:" + records.get(0).getStudentCredits());
+                        out.print("<br/>");
+                        out.print("当前所有课程平均学分绩点:" + records.get(0).getGpa());
                     }
                 %>
                 <table class="table table-striped">

@@ -234,6 +234,14 @@ public class Record {
         this.count = count;
     }
 
+    public String getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(String gpa) {
+        this.gpa = gpa;
+    }
+
     private String courseNumber;
     private String courseId;
     private String courseName;
@@ -263,11 +271,12 @@ public class Record {
     private String className;
     private String grade;
     private String count;
+    private String gpa;
 
     public Record() {
     }
 
-    public Record(String courseNumber, String courseId, String courseName, String courseTerm, String courseCredit, String coursePeriod, String courseExamination, String courseDetail, String courseTeacherId, String studentId, String studentMajorId, String studentClassName, String studentName, String studentSex, String studentAge, String studentRegion, String studentCredits, String teacherId, String teacherName, String teacherSex, String teacherAge, String teacherTitle, String teacherPhone, String scoreValue, String majorId, String majorName, String className, String grade, String count) {
+    public Record(String courseNumber, String courseId, String courseName, String courseTerm, String courseCredit, String coursePeriod, String courseExamination, String courseDetail, String courseTeacherId, String studentId, String studentMajorId, String studentClassName, String studentName, String studentSex, String studentAge, String studentRegion, String studentCredits, String teacherId, String teacherName, String teacherSex, String teacherAge, String teacherTitle, String teacherPhone, String scoreValue, String majorId, String majorName, String className, String grade, String count, String gpa) {
         this.courseNumber = courseNumber;
         this.courseId = courseId;
         this.courseName = courseName;
@@ -297,5 +306,6 @@ public class Record {
         this.className = className;
         this.grade = grade;
         this.count = count;
+        this.gpa = gpa;
     }
 }

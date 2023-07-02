@@ -148,6 +148,7 @@ public class StudentDaoImpl implements StudentDao {
                 record.setCourseCredit(rs.getString("jy_credit"));
                 record.setCoursePeriod(rs.getString("jy_period"));
                 record.setCourseTerm(rs.getString("jy_term"));
+                record.setGpa(rs.getString("jy_gpa"));
                 records.add(record);
             }
             Dao.closeAll(conn, stat, rs);
